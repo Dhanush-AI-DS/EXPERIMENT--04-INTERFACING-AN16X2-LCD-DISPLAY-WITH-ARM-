@@ -170,17 +170,57 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 ## CIRCUIT DIAGRAM 
 ![image](https://user-images.githubusercontent.com/36288975/233857974-bda6200e-4f88-4e7b-b189-4da80210fa23.png)
+```
+NAME: DHANUSH S
+REG.NO:212221230020 
+````
 
-
+```
 ## STM 32 CUBE PROGRAM :
 
+#include "main.h"
+#include "lcd.h"
+
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
 
 
+int main(void)
+{
+
+  HAL_Init();
+
+
+  SystemClock_Config();
+
+
+  MX_GPIO_Init();
+  Lcd_PortType ports[] = {GPIOA,GPIOA,GPIOA,GPIOA};
+  Lcd_PinType pins[] = {GPIO_PIN_3,GPIO_PIN_2,GPIO_PIN_1,GPIO_PIN_0};
+  Lcd_HandleTypeDef lcd;
+  lcd = Lcd_create(ports,pins,GPIOB,GPIO_PIN_0,GPIOB,GPIO_PIN_1,LCD_4_BIT_MODE);
+  Lcd_cursor(&lcd, 0,1);
+  Lcd_string(&lcd, "DEPT-AIDS");
+
+  while (1)
+  {
+	  Lcd_cursor(&lcd, 1,1);
+	   Lcd_string(&lcd, "DHANUSH");
+
+	  }
+
+}
+
+````
 
 ## Output screen shots of proteus  :
- 
- 
+
+## LED OFF CONDITION:
+![output](pmc%20off%20.png)
+## LED ON CONDITION:
+![output](pmc%204-on.png)
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
+ ![output](pmc%204%20-pdf.png)
  
  
 ## Result :
